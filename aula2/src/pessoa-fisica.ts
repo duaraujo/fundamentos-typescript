@@ -28,11 +28,12 @@ export class PessoaFisica extends Conta {
         if (valor > this.saldo) {
             return false;
         } else {
+            this.saldo = this.saldo - valor;
             return true;
         }
     }
     depositar(valor: number): number {
-        this.saldo = valor;
+        this.saldo = this.saldo + valor;
         return this.saldo;
     }
 }
